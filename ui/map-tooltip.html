@@ -1,0 +1,15 @@
+<strong style="font-size:17px;">{{ record.fields.club_name | limitTo:25 }}</strong>
+<hr/>
+<img src="{{ record.fields.image_logo }}" style="float:left; height:70px;max-width:70px;width: expression(this.width &gt; 70 ? 70: true);"/>
+
+<div style="overflow: hidden; padding-left:15px">
+    <a ng-if="record.fields.facebook_vk_page" href="{{record.fields.facebook_vk_page}}">Facebook or VK</a>
+    <a ng-if="record.fields.website_if_any" href="{{record.fields.website_if_any}}">Website</a>
+</div>
+
+<div style="clear: both;"></div>
+<p ng-if="record.fields.any_other_info_free_text">
+    <strong>Info:</strong>
+    <br/>
+    {{record.fields.any_other_info_free_text}}
+</p>
